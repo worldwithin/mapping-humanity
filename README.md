@@ -9,7 +9,7 @@
 
 To install (development environment) on your machine, just follow the tips above:
 
-    % git clone git@github.com:cosmitdev/mapping-humanity.git
+    % git clone git@github.com:worldwithin/mapping-humanity.git
 
 After you have cloned this repo, run this setup script to set up your machine
 with the necessary dependencies to run and test this app:
@@ -19,7 +19,7 @@ with the necessary dependencies to run and test this app:
 It assumes you have a machine equipped with Ruby, Postgres, etc. If not, set up
 your machine with [this script].
 
-[this script]: https://github.com/COSMITdev/env-setup
+[this script]: https://github.com/worldwithin/env-setup
 
 After setting up, you can run the application using [Heroku Local]:
 
