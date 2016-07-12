@@ -1,13 +1,28 @@
 .container
   .row
     .col-md-10.u-centered
-      h1 h1 Style
-      h2 h1 Style
-      h3 h1 Style
-      hr
-      span.breadCrumbs
-        = link_to 'Link Inactive', '', class: 'breadCrumbLink'
-        |  / 
-        = link_to 'Link Active', '', class: 'breadCrumbLink -active'
-      hr
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      section
+        h1 h1 Style
+        h2 h1 Style
+        h3 h1 Style
+        hr
+      section
+        span.breadCrumbs
+          = link_to 'Link Inactive', '', class: 'breadCrumbLink'
+          |  / 
+          = link_to 'Link Active', '', class: 'breadCrumbLink -active'
+        hr
+      section
+        p.projectTitle Borderless | Arts Education for Syrian Refugees
+        p.projectSubtitle.u-marginBot10 With Art of Hope
+        p.projectDate.u-marginBot20.u-marginTop10 August, 1, 2016
+        p.projectDescription Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        hr
+      section
+        span.raised 4.5k raised
+        br
+        span.raised.-big 4.5k Raised
+        hr
+      section
+        span.read Read more

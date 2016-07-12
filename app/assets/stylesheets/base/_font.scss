@@ -27,6 +27,7 @@ body {
 
 p {
   line-height: 1.5rem;
+  font-size: .875rem;
 }
 
 // # Headings
@@ -53,4 +54,4 @@ h6 { font-size: 12px; font-size: 0.75rem; }
 
 // # Utilities
 // # =================================================================
-.small { font-size: 85% }
+.small { font-size: 80% !important; }
