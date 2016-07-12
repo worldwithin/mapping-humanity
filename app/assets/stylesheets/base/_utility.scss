@@ -118,7 +118,7 @@
 // # Text Transform
 // # =================================================================
 .u-textUp {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 .u-textLow {
@@ -131,44 +131,6 @@
 
 .u-textNone {
   text-transform: none;
-}
-
-// # Text Color
-// # =================================================================
-.u-textBlue {
-  color: $brand;
-}
-
-.u-textWhite {
-  color: white;
-}
-
-.u-textGray {
-  color: $gray-blue-dark;
-}
-
-.u-textGray-light {
-  color: #999;
-}
-
-// # Link
-// # =================================================================
-.u-link {
-  color: $brand;
-
-  &:hover,
-  &:focus {
-    color: $brand;
-  }
-}
-
-.u-linkInverse {
-  color: $gray;
-
-  &:hover,
-  &:focus {
-    color: $brand;
-  }
 }
 
 // # Misc
@@ -185,4 +147,22 @@
 
 .u-hide {
   display: none;
+}
+
+.u-linkRed {
+  color: $red;
+
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+}
+
+.u-linkYellow {
+  color: $yellow;
+
+  &:hover,
+  &:focus {
+    color: $yellow;
+  }
 }

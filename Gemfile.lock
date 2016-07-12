@@ -135,7 +135,6 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
-    normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     passenger (5.0.29)
       rack
@@ -291,7 +290,6 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener
-  normalize-rails (~> 3.0.0)
   passenger (~> 5.0)
   pg
   pry-rails

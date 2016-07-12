@@ -1,20 +1,24 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-@import "normalize-rails";
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+@import 'ress';
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
 // ==== Variables
 @import 'variables/colors';
-@import 'variables/variables';
+
 // ==== Base
 @import 'base/base';
 @import 'base/font';
 @import 'base/utility';
-// ==== Components
-@import 'components/navbar';
-@import 'components/title';
-@import 'components/buttons';
-@import 'components/forms';
-@import 'components/flash';
 
+// ==== Components
+@import 'components/flash';
+@import 'components/breadcrumb';
+@import 'components/menulink';
+@import 'components/subtitle';
+@import 'components/projectlist';
+@import 'components/raised';
+@import 'components/read';
+@import 'components/profile';

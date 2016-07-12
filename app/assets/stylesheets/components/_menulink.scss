@@ -1,0 +1,25 @@
+// # =================================================================
+// # Menu Link
+// # =================================================================
+.menuList {
+  margin-bottom: 20px;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.menuLink {
+  font-size: 1.125rem;
+  color: $gray-light;
+
+  &:hover,
+  &:focus {
+    color: $gray-light;
+  }
+
+  &.-active {
+    color: $black;
+    text-decoration: none;
+  }
+}
