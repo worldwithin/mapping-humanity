@@ -10,17 +10,16 @@
     padding: 20px;
   }
   .success.wrapper, .notice.wrapper {
-    background-color: $success;
+    // background-color: $success;
   }
   .failure.wrapper, .alerts-error.wrapper, .alerts-error.wrapper {
-    background-color: $error;
+    // background-color: $error;
   }
   .locale.wrapper {
-    background-color: $info;
+    // background-color: $info;
   }
   .warning.wrapper {
-    color: $black;
-    background-color: $yellow;
+    // background-color: $warning;
   }
 }
 
