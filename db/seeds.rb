@@ -11,4 +11,15 @@ unless Rails.env.production?
     AdminUser.create(name: "Admin #{index}", email: "admin_#{index}@example.com",
                      password: "123123123")
   end
+
+  10.times do |index|
+    works  = [true, false].suffle.first
+    people = [true, false].suffle.first
+
+    Category.create(name: "Category #{index}", people: people, works: works)
+  end
+
+  10.times do |index|
+    Person.create(name: "Person #{index}")
+  end
 end
