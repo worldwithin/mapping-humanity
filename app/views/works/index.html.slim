@@ -7,7 +7,7 @@
         = link_to 'Work', works_path, class: 'breadCrumbLink -active'
   .row
     .col-sm-3
-      p sidenav
+      = render 'partials/sidenav'
     .col-sm-9
       - 3.times do
         .row.u-marginBot70
@@ -20,4 +20,3 @@
             p.projectDescription.u-marginBot0 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             span.raised 4.5k raised
             = link_to 'Read more', '', class: 'read u-floatRgt'
-
