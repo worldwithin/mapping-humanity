@@ -4,6 +4,7 @@
 .projectTitle {
   color: $black;
   font-size: 1.125rem;
+  line-height: 1.3rem;
   margin-bottom: 0;
 }
 
@@ -20,9 +21,9 @@
   line-height: 1.4rem;
 }
 
-.projectList-img {
+.projectImg {
   width: 100%;
-  height: 240px;
+  height: 200px;
   background-color: #f2f2f2;
   border: 0;
 }
