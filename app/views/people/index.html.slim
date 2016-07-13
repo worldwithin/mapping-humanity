@@ -1,2 +1,17 @@
-h1 People#index
-p Find me in app/views/people/index.html.slim
+.container
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Homepage', root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Team', people_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/sidenav'
+    .col-sm-9
+      .row
+        - 6.times do
+          .col-sm-4
+            .profile.u-marginBot30
+              .u-centered.profileImage.img-circle
+              p.u-textCenter.profileName.u-marginTop10 Rostam Zafari
