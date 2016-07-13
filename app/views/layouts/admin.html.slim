@@ -18,9 +18,9 @@ html
 
   body.site
     = initjs_tag 'MappingHumanity'
-    = render 'layouts/flash'
-    = render 'partials/header'
+    = render 'layouts/admin/flash'
+    = render 'partials/admin/header'
     .site-content
       = yield
-    = render 'partials/footer'
-    = render 'partials/javascripts'
+    = render 'partials/admin/footer'
+    = render 'partials/admin/javascripts'

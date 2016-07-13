@@ -17,6 +17,7 @@ gem "coffee-rails"
 gem "slim-rails", "~> 3.0.1"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
+gem "meta-tags"
 
 group :development do
   gem "thin"

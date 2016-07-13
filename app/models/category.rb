@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   protected
 
   def has_at_least_one_purpose?
-    if people.false? && works.false?
+    if !people && !works
       errors.add(:people, 'Must choose at least one purpose of use')
     end
   end

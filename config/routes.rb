@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+  devise_for :admin_users, path: 'admin', controllers: { sessions: 'admin/sessions' }
+
+  namespace :admin do
+    root to: 'admin#dashboard'
+    resources :works
+    resources :people
+  end
+
   root to: 'pages#homepage'
 
   resources :people, only: :index
