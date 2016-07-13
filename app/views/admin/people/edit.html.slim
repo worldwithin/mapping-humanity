@@ -1,0 +1,4 @@
+h1 People#edit page
+= simple_form_for @person, url: admin_person_path, method: :patch do |f|
+  = render partial: 'fields', locals: { f: f }
+  = f.submit 'Update Person', class: 'btn btn-warning'

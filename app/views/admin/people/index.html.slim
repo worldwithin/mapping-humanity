@@ -1,0 +1,9 @@
+h1 People#index page
+= link_to 'New Person', new_admin_person_path
+br
+- @people.each do |person|
+  = image_tag person.avatar, size: '100x100'
+  = link_to person.name, admin_person_path(person)
+  = link_to 'Edit', edit_admin_person_path(person)
+  = link_to 'Remove', admin_person_path(person), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }
+  br
