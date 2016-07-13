@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     root to: 'admin#dashboard'
     resources :works
     resources :people
+    resources :categories
   end
 
   root to: 'pages#homepage'
