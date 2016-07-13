@@ -1,2 +1,15 @@
-h1 Pages#homepage
-p Find me in app/views/pages/homepage.html.slim
+.container
+  .row
+    .col-sm-8.col-md-6.u-centered
+      .heroContainer
+        .u-verticalAlign
+          h1 World Within Foundation
+          p.subtitle
+            | We’re the headquarters for humanity, designing solutions to local & global challenges. Check out our 
+            = link_to 'our team', '', class: 'u-linkRed'
+            |  and 
+            = link_to "what we're working on", '', class: 'u-linkYellow'
+            | . 
+          .socialIcons.u-floatRgt
+            = link_to '' do
+              i.fa.fa-facebook-official
