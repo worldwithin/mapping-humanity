@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712141504) do
+ActiveRecord::Schema.define(version: 20160712185354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 20160712141504) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       default: "", null: false
+    t.boolean  "people"
+    t.boolean  "works"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
@@ -51,5 +59,21 @@ ActiveRecord::Schema.define(version: 20160712141504) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name",       default: "", null: false
+    t.string   "avatar"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string   "name",                                  default: "",  null: false
+    t.text     "description",                           default: "",  null: false
+    t.string   "cover_image"
+    t.decimal  "raised_money", precision: 10, scale: 2, default: 0.0, null: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+  end
 
 end
