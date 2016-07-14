@@ -15,3 +15,11 @@ en:
       update:
         error: 'There was an error while trying to update this Work'
         success: 'Work updated with success!'
+
+    categories:
+      create:
+        error: 'There was an error while trying to add a new Category'
+        success: 'Category added with success!'
+      update:
+        error: 'There was an error while trying to update this Category'
+        success: 'Category updated with success!'

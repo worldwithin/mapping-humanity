@@ -1,4 +1,16 @@
-h1 Categories#edit page
-= simple_form_for @category, url: admin_category_path, method: :patch do |f|
-  = render partial: 'fields', locals: { f: f }
-  = f.submit 'Update Category', class: 'btn btn-warning'
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Categories', admin_categories_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to "Edit #{@category.name}", edit_admin_category_path(@category), class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      = simple_form_for @category, url: admin_category_path, method: :patch do |f|
+        = render partial: 'fields', locals: { f: f }
+        = f.submit 'Update Category', class: 'btn btn-warning'

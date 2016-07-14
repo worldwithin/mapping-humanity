@@ -15,9 +15,11 @@
           .col-sm-4
             = image_tag work.cover_image, class: 'img-responsive projectImg'
           .col-sm-8
-            p.projectTitle work.name
+            p.projectTitle = work.name
             p.projectSubtitle.u-marginTop5 (TODO) With Art of Hope
-            p.projectDate.u-marginBot20.u-marginTop20 = work.create_at
-            p.projectDescription.u-marginBot0 = work.description
-            span.raised = number_to_currency work.raised_money
+            p.projectDate.u-marginBot20.u-marginTop20 = work.created_at.strftime("%B %e, %Y")
+            p.projectDescription = truncate(work.description, length: 140)
+            span.raised
+              = number_to_currency work.raised_money
+              | k raised
             = link_to 'Read more', work_path(work), class: 'read u-floatRgt'

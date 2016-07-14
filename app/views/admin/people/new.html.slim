@@ -1,4 +1,16 @@
-h1 People#new page
-= simple_form_for @person, url: admin_people_path do |f|
-  = render partial: 'fields', locals: { f: f }
-  = f.submit 'Create Person', class: 'btn btn-success'
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Team', admin_people_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'New Member', new_admin_person_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      = simple_form_for @person, url: admin_people_path do |f|
+        = render partial: 'fields', locals: { f: f }
+        = f.submit 'Create Person', class: 'btn btn-success'

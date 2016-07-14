@@ -1,9 +1,18 @@
-h1 Works#show
-p Find me in app/views/works/show.html.slim
-
-= image_tag @work.cover_image, size: '100x100'
-= @work.name
-= number_to_currency @work.raised_money
-br
-= @work.description
-hr
+.container
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Homepage', root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Work', works_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to "Work #{@work.name}", work_path(@work), class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/sidenav'
+    .col-sm-9
+      span.raised.-big
+        = number_to_currency @work.raised_money
+        | k Raised
+      p.projectDate.u-marginBot20.u-marginTop20 = @work.created_at.strftime("%B %e, %Y")
+      p.projectDescription = @work.description

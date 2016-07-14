@@ -1,8 +1,17 @@
-h1 Categories#index page
-= link_to 'New Category', new_admin_category_path
-br
-- @categories.each do |category|
-  = link_to category.name, admin_category_path(category)
-  = link_to 'Edit', edit_admin_category_path(category)
-  = link_to 'Remove', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }
-  br
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Categories', admin_categories_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      = link_to 'New Category', new_admin_category_path, class: 'btn btn-success'
+      - @categories.each do |category|
+        p.u-marginTop20 = category.name
+        = link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-default u-marginRgt20'
+        = link_to 'Remove', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }, class: 'btn btn-danger'
+        br
