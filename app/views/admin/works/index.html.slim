@@ -1,0 +1,13 @@
+h1 Work#index page
+= link_to 'New Work', new_admin_work_path
+br
+- @works.each do |work|
+  = image_tag work.cover_image, size: '100x100'
+  = link_to work.name, admin_work_path(work)
+  = number_to_currency work.raised_money
+  br
+  = link_to 'Edit', edit_admin_work_path(work)
+  = link_to 'Remove', admin_work_path(work), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }
+  br
+  = work.description
+  hr

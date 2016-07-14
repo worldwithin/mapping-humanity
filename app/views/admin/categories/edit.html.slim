@@ -1,0 +1,4 @@
+h1 Categories#edit page
+= simple_form_for @category, url: admin_category_path, method: :patch do |f|
+  = render partial: 'fields', locals: { f: f }
+  = f.submit 'Update Category', class: 'btn btn-warning'

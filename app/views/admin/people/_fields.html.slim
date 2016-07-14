@@ -1,0 +1,3 @@
+= f.input :name
+= f.input :avatar
+= f.association :categories, as: :check_boxes, collection: Category.where(people: true)

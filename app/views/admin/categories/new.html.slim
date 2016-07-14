@@ -1,0 +1,4 @@
+h1 Categories#new page
+= simple_form_for @category, url: admin_categories_path do |f|
+  = render partial: 'fields', locals: { f: f }
+  = f.submit 'Create Category', class: 'btn btn-success'

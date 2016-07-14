@@ -1,0 +1,4 @@
+h1 People#new page
+= simple_form_for @person, url: admin_people_path do |f|
+  = render partial: 'fields', locals: { f: f }
+  = f.submit 'Create Person', class: 'btn btn-success'

@@ -1,0 +1,6 @@
+h1 Works#show page
+= image_tag @work.cover_image, size: '100x100'
+= @work.name
+= number_to_currency @work.raised_money
+br
+= @work.description

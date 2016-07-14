@@ -4,7 +4,7 @@ class CreateWorks < ActiveRecord::Migration
       t.string :name, null: false, default: ''
       t.text :description, null: false, default: ''
       t.string :cover_image
-      t.decimal :raised_money, null: false, default: 0.0, precision: 2, scale: 10
+      t.decimal :raised_money, null: false, default: 0.0, precision: 10, scale: 2
 
       t.timestamps null: false
     end

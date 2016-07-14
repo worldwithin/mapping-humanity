@@ -10,8 +10,8 @@
       = render 'partials/sidenav'
     .col-sm-9
       .row
-        - 6.times do
+        - @people.each do |person|
           .col-sm-4
             .profile.u-marginBot30
-              .u-centered.profileImage.img-circle
-              p.u-textCenter.profileName.u-marginTop10 Rostam Zafari
+              = image_tag person.avatar, class: 'u-centered profileImage img-circle'
+              p.u-textCenter.profileName.u-marginTop10 = person.name

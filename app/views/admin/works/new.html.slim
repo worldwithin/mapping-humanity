@@ -1,0 +1,4 @@
+h1 Works#new page
+= simple_form_for @work, url: admin_works_path do |f|
+  = render partial: 'fields', locals: { f: f }
+  = f.submit 'Create Work', class: 'btn btn-success'

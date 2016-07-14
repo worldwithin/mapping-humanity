@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712185354) do
+ActiveRecord::Schema.define(version: 20160714185956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -67,6 +82,26 @@ ActiveRecord::Schema.define(version: 20160712185354) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "person_categories", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "person_categories", ["category_id"], name: "index_person_categories_on_category_id", using: :btree
+  add_index "person_categories", ["person_id"], name: "index_person_categories_on_person_id", using: :btree
+
+  create_table "work_categories", force: :cascade do |t|
+    t.integer  "work_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "work_categories", ["category_id"], name: "index_work_categories_on_category_id", using: :btree
+  add_index "work_categories", ["work_id"], name: "index_work_categories_on_work_id", using: :btree
+
   create_table "works", force: :cascade do |t|
     t.string   "name",                                  default: "",  null: false
     t.text     "description",                           default: "",  null: false
@@ -76,4 +111,8 @@ ActiveRecord::Schema.define(version: 20160712185354) do
     t.datetime "updated_at",                                          null: false
   end
 
+  add_foreign_key "person_categories", "categories"
+  add_foreign_key "person_categories", "people"
+  add_foreign_key "work_categories", "categories"
+  add_foreign_key "work_categories", "works"
 end

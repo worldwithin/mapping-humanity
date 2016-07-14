@@ -1,0 +1,9 @@
+h1 Works#show
+p Find me in app/views/works/show.html.slim
+
+= image_tag @work.cover_image, size: '100x100'
+= @work.name
+= number_to_currency @work.raised_money
+br
+= @work.description
+hr

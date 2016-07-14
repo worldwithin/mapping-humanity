@@ -10,14 +10,14 @@
     .col-sm-3
       = render 'partials/sidenav'
     .col-sm-9
-      - 3.times do
+      - @works.each do |work|
         .row.u-marginBot70
           .col-sm-4
-            .img-responsive.projectImg
+            = image_tag work.cover_image, class: 'img-responsive projectImg'
           .col-sm-8
-            p.projectTitle Borderless | Arts Education for Syrian Refugees
-            p.projectSubtitle.u-marginTop5 With Art of Hope
-            p.projectDate.u-marginBot20.u-marginTop20 August, 1, 2016
-            p.projectDescription.u-marginBot0 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-            span.raised 4.5k raised
-            = link_to 'Read more', '', class: 'read u-floatRgt'
+            p.projectTitle work.name
+            p.projectSubtitle.u-marginTop5 (TODO) With Art of Hope
+            p.projectDate.u-marginBot20.u-marginTop20 = work.create_at
+            p.projectDescription.u-marginBot0 = work.description
+            span.raised = number_to_currency work.raised_money
+            = link_to 'Read more', work_path(work), class: 'read u-floatRgt'

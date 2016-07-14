@@ -1,0 +1,5 @@
+= f.input :name
+= f.input :description
+= f.input :cover_image
+= f.input :raised_money
+= f.association :categories, as: :check_boxes, collection: Category.where(works: true)

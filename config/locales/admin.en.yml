@@ -1,0 +1,17 @@
+en:
+  admin:
+    people:
+      create:
+        error: 'There was an error while trying to add a new Person'
+        success: 'Person added with success!'
+      update:
+        error: 'There was an error while trying to update this Person'
+        success: 'Person updated with success!'
+
+    works:
+      create:
+        error: 'There was an error while trying to add a new Work'
+        success: 'Work added with success!'
+      update:
+        error: 'There was an error while trying to update this Work'
+        success: 'Work updated with success!'
