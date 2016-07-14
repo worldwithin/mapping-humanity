@@ -1,1 +1,10 @@
-h1 This is the Dashboard of the Admin!
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      / TODO add the follow work
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9

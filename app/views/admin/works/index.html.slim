@@ -1,13 +1,26 @@
-h1 Work#index page
-= link_to 'New Work', new_admin_work_path
-br
-- @works.each do |work|
-  = image_tag work.cover_image, size: '100x100'
-  = link_to work.name, admin_work_path(work)
-  = number_to_currency work.raised_money
-  br
-  = link_to 'Edit', edit_admin_work_path(work)
-  = link_to 'Remove', admin_work_path(work), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }
-  br
-  = work.description
-  hr
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Work', admin_works_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      = link_to 'New Work', new_admin_work_path, class: 'btn btn-success'
+      - @works.each do |work|
+        .row.u-marginBot70
+          .col-sm-4
+            = image_tag work.cover_image, class: 'img-responsive projectImg'
+          .col-sm-8
+            p.projectTitle work.name, admin_work_path(work)
+            p.projectSubtitle.u-marginTop5 (TODO) With Art of Hope
+            p.projectDate.u-marginBot20.u-marginTop20 = work.create_at
+            p.projectDescription.u-marginBot0 = work.description
+            span.raised = number_to_currency work.raised_money
+            = link_to 'Read more', admin_work_path(work), class: 'read u-floatRgt'
+            br
+            = link_to 'Edit', edit_admin_work_path(work), class: 'btn btn-def'
+            = link_to 'Remove', admin_work_path(work), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }, class: 'btn btn-danger'
