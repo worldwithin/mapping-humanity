@@ -16,10 +16,10 @@ class Admin::WorksController < Admin::AdminController
   def create
     @work = Work.new(permitted_params)
     if @work.save
-      flash[:notice] = t('admin.work.create.success')
+      flash[:notice] = t('admin.works.create.success')
       redirect_to admin_works_path
     else
-      flash[:alert] = t('admin.work.create.error')
+      flash[:alert] = t('admin.works.create.error')
       render :new
     end
   end
@@ -31,10 +31,10 @@ class Admin::WorksController < Admin::AdminController
   def update
     @work = Work.find(params[:id])
     if @work.update(permitted_params)
-      flash[:notice] = t('admin.work.update.success')
+      flash[:notice] = t('admin.works.update.success')
       redirect_to admin_works_path
     else
-      flash[:notice] = t('admin.work.create.error')
+      flash[:notice] = t('admin.works.create.error')
       render :edit
     end
   end

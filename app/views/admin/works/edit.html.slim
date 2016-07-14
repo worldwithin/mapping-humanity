@@ -1,4 +1,4 @@
 h1 Works#edit page
-= simple_form_for @work, url: admin_works_path, method: :patch do |f|
+= simple_form_for @work, url: admin_work_path, method: :patch do |f|
   = render partial: 'fields', locals: { f: f }
   = f.submit 'Update Work', class: 'btn btn-warning'
