@@ -19,7 +19,7 @@
             p.projectTitle = work.name
             p.projectSubtitle.u-marginTop5 (TODO) With Art of Hope
             p.projectDate.u-marginBot20.u-marginTop20 = work.created_at.strftime("%B %e, %Y")
-            p.projectDescription.u-marginBot0 = truncate(work.description, length: 140)
+            p.projectDescription = truncate(work.description, length: 140)
             span.raised 
               = number_to_currency work.raised_money
               | k raised

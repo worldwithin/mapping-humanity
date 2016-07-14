@@ -1,6 +1,18 @@
-h1 Works#show page
-= image_tag @work.cover_image, size: '100x100'
-= @work.name
-= number_to_currency @work.raised_money
-br
-= @work.description
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Work', admin_works_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to "Work #{@work.name}", work_path(@work), class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      span.raised.-big
+        = number_to_currency @work.raised_money
+        | k Raised
+      p.projectDate.u-marginBot20.u-marginTop20 = @work.created_at.strftime("%B %e, %Y")
+      p.projectDescription = @work.description
