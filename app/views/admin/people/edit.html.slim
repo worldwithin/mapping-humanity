@@ -4,7 +4,7 @@
       span
         = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
         |  / 
-        = link_to 'People', admin_people_path, class: 'breadCrumbLink'
+        = link_to 'Team', admin_people_path, class: 'breadCrumbLink'
         |  / 
         = link_to "Edit #{@person.name}", edit_admin_person_path(@person), class: 'breadCrumbLink -active'
   .row

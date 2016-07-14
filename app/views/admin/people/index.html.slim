@@ -4,12 +4,12 @@
       span
         = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
         |  / 
-        = link_to 'People', admin_people_path, class: 'breadCrumbLink -active'
+        = link_to 'Team', admin_people_path, class: 'breadCrumbLink -active'
   .row
     .col-sm-3
       = render 'partials/admin/sidenav'
     .col-sm-9
-      = link_to 'New Person', new_admin_person_path, class: 'btn btn-success'
+      = link_to 'New Member', new_admin_person_path, class: 'btn btn-success'
       hr
       - @people.each do |person|
         .col-sm-4.u-marginBot30
