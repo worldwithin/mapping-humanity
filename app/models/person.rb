@@ -1,3 +1,6 @@
 class Person < ActiveRecord::Base
-  validates :name, presence: true
+  has_many :person_categories
+  has_many :categories, through: :person_categories
+
+  validates :name, :categories, presence: true
 end
