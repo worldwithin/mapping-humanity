@@ -23,11 +23,14 @@ unless Rails.env.production?
 
   printf "======> Creating People\n\n"
   10.times do |index|
-    Person.create(name: "Person #{index}")
+    category = Category.where(people: true).shuffle.first.id
+    Person.create(name: "Person #{index}", category_ids:[category])
   end
 
   printf "======> Creating Works\n\n"
   10.times do |index|
-    Work.create(name: "Project #{index}", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    category = Category.where(works: true).shuffle.first.id
+    Work.create(name: "Project #{index}", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                category_ids: [category])
   end
 end
