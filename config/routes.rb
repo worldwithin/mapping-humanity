@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#homepage'
 
   resources :people, only: :index
-  resources :works, only: :index
+  resources :works, only: [:index, :show]
 
   get 'style', to: 'pages#style', as: :style
 end
