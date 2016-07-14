@@ -51,6 +51,7 @@ class Admin::WorksController < Admin::AdminController
   protected
 
   def permitted_params
-    params.require(:work).permit([:name, :description, :cover_image, :raised_money])
+    params.require(:work).permit([:name, :description, :cover_image, :raised_money,
+                                  category_ids:[]])
   end
 end

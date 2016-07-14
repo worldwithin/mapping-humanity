@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :work_category do
+    work nil
+    category nil
+  end
   factory :person_category do
     person nil
     category nil
