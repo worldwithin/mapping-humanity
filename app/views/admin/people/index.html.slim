@@ -10,11 +10,12 @@
       = render 'partials/admin/sidenav'
     .col-sm-9
       = link_to 'New Person', new_admin_person_path, class: 'btn btn-success'
+      hr
       - @people.each do |person|
-        .col-sm-4
-          .profile.u-marginBot30
+        .col-sm-4.u-marginBot30
+          .profile
             = image_tag person.avatar, class: 'u-centered profileImage img-circle'
             p.u-textCenter.profileName.u-marginTop10 = person.name
           br
-          = link_to 'Edit', edit_admin_person_path(person), class: 'btn btn-default'
+          = link_to 'Edit', edit_admin_person_path(person), class: 'btn btn-default u-marginRgt20'
           = link_to 'Remove', admin_person_path(person), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }, class: 'btn btn-danger'
