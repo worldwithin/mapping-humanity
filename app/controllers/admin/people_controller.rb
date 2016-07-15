@@ -34,7 +34,7 @@ class Admin::PeopleController < Admin::AdminController
       flash[:notice] = t('admin.people.update.success')
       redirect_to admin_people_path
     else
-      flash[:notice] = t('admin.people.create.error')
+      flash[:alert] = t('admin.people.create.error')
       render :edit
     end
   end

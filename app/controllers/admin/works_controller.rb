@@ -34,7 +34,7 @@ class Admin::WorksController < Admin::AdminController
       flash[:notice] = t('admin.works.update.success')
       redirect_to admin_works_path
     else
-      flash[:notice] = t('admin.works.create.error')
+      flash[:alert] = t('admin.works.create.error')
       render :edit
     end
   end
