@@ -3,4 +3,6 @@ class Work < ActiveRecord::Base
   has_many :categories, through: :work_categories
 
   validates :name, :description, :categories, presence: true
+
+  mount_uploader :cover_image, CoverImageUploader
 end

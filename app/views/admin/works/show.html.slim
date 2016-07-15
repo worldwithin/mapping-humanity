@@ -11,6 +11,9 @@
     .col-sm-3
       = render 'partials/admin/sidenav'
     .col-sm-9
+      .row.u-marginBot70
+        .col-sm-4
+          = image_tag @work.cover_image, size: '350x250'
       span.raised.-big
         = number_to_currency @work.raised_money
         | k Raised

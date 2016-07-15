@@ -1,5 +1,7 @@
+- if f.object.cover_image.url.present?
+  = image_tag f.object.cover_image, class: 'img-responsive projectImg'
+= f.input :cover_image
 = f.input :name
 = f.input :description
-= f.input :cover_image
 = f.input :raised_money
 = f.association :categories, as: :check_boxes, collection: Category.where(works: true)
