@@ -1,7 +1,18 @@
 - if f.object.cover_image.url.present?
   = image_tag f.object.cover_image, class: 'img-responsive projectImg'
 = f.input :cover_image
+= f.hidden_field :cover_image_cache
 = f.input :name
 = f.input :description
 = f.input :raised_money
 = f.association :categories, as: :check_boxes, collection: Category.where(works: true)
+.links
+= f.link_to_add 'Add Image', :work_images
+#work_images
+  = f.simple_fields_for :work_images, @work.work_images do |image|
+    .nested-fields
+      - if image.object.image.present?
+        = image_tag image.object.image, size: '100x100'
+      = image.input :image
+      = image.hidden_field :image_cache
+      = image.link_to_remove "Remove Image?"

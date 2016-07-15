@@ -11,6 +11,6 @@
     .col-sm-3
       = render 'partials/admin/sidenav'
     .col-sm-9
-      = simple_form_for @work, url: admin_works_path do |f|
+      = simple_nested_form_for @work, url: admin_works_path do |f|
         = render partial: 'fields', locals: { f: f }
         = f.submit 'Create Work', class: 'btn btn-success'

@@ -51,6 +51,6 @@ class Admin::PeopleController < Admin::AdminController
   protected
 
   def permitted_params
-    params.require(:person).permit([:name, :avatar, category_ids:[]])
+    params.require(:person).permit([:name, :avatar, :avatar_cache, category_ids:[]])
   end
 end

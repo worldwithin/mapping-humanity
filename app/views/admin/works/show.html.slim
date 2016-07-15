@@ -19,3 +19,8 @@
         | k Raised
       p.projectDate.u-marginBot20.u-marginTop20 = @work.created_at.strftime("%B %e, %Y")
       p.projectDescription = @work.description
+      
+      .row.u-marginBot70
+        - @work.work_images.each do |image|
+          .col-sm-4
+            = image_tag image.image, size: '350x250'
