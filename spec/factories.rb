@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :work_image do
+    work nil
+    image "MyString"
+  end
   factory :work_category do
     work nil
     category nil

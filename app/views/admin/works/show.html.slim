@@ -6,7 +6,7 @@
         |  / 
         = link_to 'Work', admin_works_path, class: 'breadCrumbLink'
         |  / 
-        = link_to "Work #{@work.name}", work_path(@work), class: 'breadCrumbLink -active'
+        = link_to "Work #{@work.name}", admin_work_path(@work), class: 'breadCrumbLink -active'
   .row
     .col-sm-3
       = render 'partials/admin/sidenav'
@@ -16,3 +16,7 @@
         | k Raised
       p.projectDate.u-marginBot20.u-marginTop20 = @work.created_at.strftime("%B %e, %Y")
       p.projectDescription = @work.description
+      .row.u-marginBot70
+        - @work.work_images.each do |image|
+          .col-sm-6
+            .projectImg-gallery style="background-image: url('#{image.image}')"

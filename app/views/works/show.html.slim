@@ -16,3 +16,7 @@
         | k Raised
       p.projectDate.u-marginBot20.u-marginTop20 = @work.created_at.strftime("%B %e, %Y")
       p.projectDescription = @work.description
+      .row.u-marginBot70
+        - @work.work_images.each do |image|
+          .col-sm-6
+            .projectImg-gallery style="background-image: url('#{image.image}')"

@@ -14,7 +14,7 @@
       - @people.each do |person|
         .col-sm-4.u-marginBot30
           .profile
-            = image_tag person.avatar, class: 'u-centered profileImage img-circle'
+            .profileImage.u-centered.img-circle style="background-image: url('#{person.avatar}')"
             p.u-textCenter.profileName.u-marginTop10 = person.name
           br
           = link_to 'Edit', edit_admin_person_path(person), class: 'btn btn-default u-marginRgt20'

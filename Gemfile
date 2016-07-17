@@ -18,6 +18,10 @@ gem "slim-rails", "~> 3.0.1"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
 gem "meta-tags"
+gem "carrierwave", github: "carrierwaveuploader/carrierwave"
+gem "fog-aws"
+gem "mini_magick"
+gem "nested_form" # for nested forms
 
 group :development do
   gem "thin"

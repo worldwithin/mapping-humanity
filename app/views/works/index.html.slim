@@ -13,7 +13,7 @@
       - @works.each do |work|
         .row.u-marginBot70
           .col-sm-4
-            = image_tag work.cover_image, class: 'img-responsive projectImg'
+            .projectImg style="background-image: url('#{work.cover_image}')"
           .col-sm-8
             p.projectTitle = work.name
             p.projectSubtitle.u-marginTop5 (TODO) With Art of Hope

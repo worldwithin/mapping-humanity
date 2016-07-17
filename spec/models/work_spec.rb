@@ -8,6 +8,7 @@ RSpec.describe Work, type: :model do
   end
 
   describe 'Relations' do
+    it { should have_many(:work_images) }
     it { should have_many(:work_categories) }
     it { should have_many(:categories).through(:work_categories) }
   end

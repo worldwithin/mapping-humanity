@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714185956) do
+ActiveRecord::Schema.define(version: 20160715185013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,15 @@ ActiveRecord::Schema.define(version: 20160714185956) do
   add_index "work_categories", ["category_id"], name: "index_work_categories_on_category_id", using: :btree
   add_index "work_categories", ["work_id"], name: "index_work_categories_on_work_id", using: :btree
 
+  create_table "work_images", force: :cascade do |t|
+    t.integer  "work_id"
+    t.string   "image",      default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "work_images", ["work_id"], name: "index_work_images_on_work_id", using: :btree
+
   create_table "works", force: :cascade do |t|
     t.string   "name",                                  default: "",  null: false
     t.text     "description",                           default: "",  null: false
@@ -100,4 +109,5 @@ ActiveRecord::Schema.define(version: 20160714185956) do
   add_foreign_key "person_categories", "people"
   add_foreign_key "work_categories", "categories"
   add_foreign_key "work_categories", "works"
+  add_foreign_key "work_images", "works"
 end
