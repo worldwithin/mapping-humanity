@@ -2,6 +2,5 @@ ul.menuList
   li = link_to 'Team', people_path, class: "menuLink #{'-active' if params[:controller]=='people'}"
   li = link_to 'Work', works_path, class: "menuLink #{'-active' if params[:controller]=='works'}"
   br
-  li = link_to 'Filter', '', class: 'menuLink'
-  li = link_to 'Filter', '', class: 'menuLink'
-  li = link_to 'Filter', '', class: 'menuLink'
+  - @categories.each do |category|
+    li = link_to category.name, url_for(category: category.name), class: 'menuLink'

@@ -8,4 +8,6 @@ class Work < ActiveRecord::Base
   validates :name, :description, :cover_image, :categories, presence: true
 
   mount_uploader :cover_image, CoverImageUploader
+
+  scope :by_category, -> (category) { includes(:categories).where("categories.name" => category) }
 end
