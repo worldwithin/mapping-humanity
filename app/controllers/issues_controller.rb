@@ -7,7 +7,7 @@ class IssuesController < ApplicationController
   end
 
   def index
-    @issues = Issue.all
+    @issues = Issue.approved
   end
 
   def show

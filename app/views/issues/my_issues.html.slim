@@ -6,7 +6,7 @@
       - @issues.each do |issue|
         .row.u-marginBot70
           .col-sm-12
-            p.projectTitle = issue.title
+            p.projectTitle = "[#{issue.approved? ? 'Approved' : 'Waiting Approvement'}]  #{issue.title}"
             p.projectDate.u-marginBot20.u-marginTop20 = issue.created_at.strftime("%B %e, %Y")
             p.projectDescription = truncate(issue.description, length: 140)
             = link_to 'Read more', issue_path(issue), class: 'read u-floatRgt'
