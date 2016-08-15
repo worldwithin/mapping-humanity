@@ -1,4 +1,11 @@
 FactoryGirl.define do
+  factory :issue do
+    user nil
+    title "MyString"
+    description "MyText"
+    video "MyString"
+    link "MyString"
+  end
   factory :user do
     name "User John Doe"
     email "user@example.com"

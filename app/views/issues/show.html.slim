@@ -1,0 +1,14 @@
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Issues', issues_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to "Issue #{@issue.title}", issue_path(@issue), class: 'breadCrumbLink -active'
+  .row
+    .col-sm-12
+      span.raised.-big = @issue.title
+      p.projectDate.u-marginBot20.u-marginTop20 = @issue.created_at.strftime("%B %e, %Y")
+      p.projectDescription = @issue.description
+      p.projectDescription = link_to @issue.link, @issue.link, target: '_blank'
+      p.projectDescription = link_to @issue.video, @issue.video, target: '_blank'

@@ -1,0 +1,16 @@
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Issue', admin_issues_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'New Issue', new_admin_issue_path, class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      = simple_nested_form_for @issue, url: admin_issues_path do |f|
+        = render partial: 'fields', locals: { f: f }
+        = f.submit 'Create Issue', class: 'btn btn-success'

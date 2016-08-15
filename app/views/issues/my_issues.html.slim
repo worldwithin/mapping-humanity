@@ -1,0 +1,15 @@
+.container.u-marginBot60
+  .row
+    .col-sm-12
+      = link_to 'New Issue', new_issue_path, class: 'btn btn-success'
+      hr
+      - @issues.each do |issue|
+        .row.u-marginBot70
+          .col-sm-12
+            p.projectTitle = issue.title
+            p.projectDate.u-marginBot20.u-marginTop20 = issue.created_at.strftime("%B %e, %Y")
+            p.projectDescription = truncate(issue.description, length: 140)
+            = link_to 'Read more', issue_path(issue), class: 'read u-floatRgt'
+            br
+            = link_to 'Edit', edit_issue_path(issue), class: 'btn btn-default u-marginRgt20'
+            = link_to 'Remove', issue_path(issue), method: :delete, data: { confirm: 'Are you sure? This actions cannot be undone.' }, class: 'btn btn-danger'

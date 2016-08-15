@@ -1,0 +1,17 @@
+.container.u-marginBot60
+  .row.breadCrumbs
+    .col-sm-12
+      span
+        = link_to 'Dashboard', admin_root_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to 'Issue', admin_issues_path, class: 'breadCrumbLink'
+        |  / 
+        = link_to "Issue #{@issue.title}", admin_issue_path(@issue), class: 'breadCrumbLink -active'
+  .row
+    .col-sm-3
+      = render 'partials/admin/sidenav'
+    .col-sm-9
+      span.raised.-big
+        = number_to_currency @issue.title
+      p.projectDate.u-marginBot20.u-marginTop20 = @issue.created_at.strftime("%B %e, %Y")
+      p.projectDescription = @issue.description

@@ -1,0 +1,3 @@
+p.text-right
+  - if current_admin_user
+    = link_to 'Exit', destroy_admin_user_session_path, method: :delete

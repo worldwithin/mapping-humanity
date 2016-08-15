@@ -1,0 +1,12 @@
+.container
+  .row.breadCrumbs
+  .row
+    .col-sm-12
+      = link_to 'New Issue', new_issue_path, class: 'btn btn-success'
+      hr
+      - @issues.each do |issue|
+        .row.u-marginBot70
+          .col-sm-12
+            p.projectTitle = link_to issue.title, issue_path(issue)
+            p.projectDate.u-marginBot20.u-marginTop20 = issue.created_at.strftime("%B %e, %Y")
+            p.projectDescription = truncate(issue.description, length: 140)

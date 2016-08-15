@@ -23,3 +23,11 @@ en:
       update:
         error: 'There was an error while trying to update this Category'
         success: 'Category updated with success!'
+
+    issues:
+      create:
+        error: 'There was an error while trying to add a new Issue'
+        success: 'Issue added with success!'
+      update:
+        error: 'There was an error while trying to update this Issue'
+        success: 'Issue updated with success!'
