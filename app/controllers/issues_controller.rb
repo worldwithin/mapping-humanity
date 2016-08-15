@@ -19,7 +19,7 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(permitted_params)
+    @issue = Issue.new(permitted_params.merge(user: current_user))
     if @issue.save
       flash[:notice] = t('admin.issues.create.success')
       redirect_to issues_path
