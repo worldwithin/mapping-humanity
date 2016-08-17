@@ -51,6 +51,6 @@ class Admin::IssuesController < Admin::AdminController
   protected
 
   def permitted_params
-    params.require(:issue).permit([:title, :description, :link, :video, :user_id])
+    params.require(:issue).permit([:approved, :title, :description, :link, :video, :user_id])
   end
 end
